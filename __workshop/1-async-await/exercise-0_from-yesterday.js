@@ -16,10 +16,16 @@ const compareToTen = (num) => {
 
 const myFunc = async (num) => {
     // add code here
+try {
+    let capWords = await compareToTen(num)
+    console.log(capWords)
+} catch(err) {
+    console.log(err)
 }
-
-myFunc(15);
-myFunc(8);
+}
+   
+// myFunc(15);
+// myFunc(8);
 
     
 // Exercise 0.1
@@ -29,6 +35,9 @@ myFunc(8);
 // and then the second function, sortWords(), will sort the words in alphabetical order.
 // If the array contains anything but strings, it should throw an error.
 
+
+
+// ------------------------------------
 const makeAllCaps = (array) => {
     return new Promise((resolve, reject) => {
 
@@ -53,6 +62,17 @@ const sortWords = (array) => {
 
 const textTransform = async (array) => {
     // add code here
+    try {
+        let arrayHolder = await makeAllCaps(array)
+        let sortedArray = await sortWords(arrayHolder)
+        console.log(sortedArray)
+    } catch(err) {
+        console.log(err)
+
+    }
+  
+
+    
 }
 
 textTransform(['cucumber', 'tomatos', 'avocado']);

@@ -4,11 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0, minimal-ui" />
         <link rel="stylesheet" href="./styles.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
         <title>So funny</title>
     </head>
     <body>
+        <div class="images"> 
+            <img class="tronald" src="/make-me-laugh/images/tronaldump.png">
+            <img class="tronald" src="/make-me-laugh/images/dad.jpg">
+            <img class="tronald" src="/make-me-laugh/images/geek.png">
+
+        </div>
         <div class='centered-container'>
-            <form>
+            <form onchange="handleSubmit(event)">
                 <label>
                     Gimme a
                     <select id="type" name="type" class='joke-select'>
@@ -17,9 +24,9 @@
                         <option value='geek'>geek</option>
                         <option value='tronald'>tronald</option>
                     </select>
-                    Joke,
+                    Joke!
                 </label>
-                <button type="submit">NOW!!</button>
+                <!-- <button class="submit" type="submit">NOW!!</button> -->
             </form>
         </div>
         <script src="scripts.js"></script>

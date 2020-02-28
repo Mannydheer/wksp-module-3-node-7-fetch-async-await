@@ -23,7 +23,7 @@ function addPromise(num){
                 doubleAfter2Seconds(20)
                     .then((b) => {
                         doubleAfter2Seconds(30).then((c) => {
-                            resolve(x + a + b + c);
+                            resolve(num + a + b + c);
                         })
                 })
         })

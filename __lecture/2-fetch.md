@@ -3,6 +3,7 @@
 ---
 
 - `fetch()` is a JavaScript (but not in NodeJS) Promise-based function.
+- mainly FRONT END where ASYNC awit is backend,. 
 - It's mainly used to
     - `GET` from somewhere
     - `POST` data somewhere
@@ -14,6 +15,8 @@ The syntax is very similar to Promises.
 ### `GET`
 
 ```js
+
+// Need to send back something , 200 is ok, 400 is error. 
 fetch('<URL>')
     .then(res => {
         // if response is successful
@@ -24,14 +27,28 @@ fetch('<URL>')
     })
     .then()
     .catch() // you can also catch errors!
+
+
 ```
 
+event listener on the button...
+call function
+
+const handleSubmit = (event) => {
+    evenet.preventDefault();
+    fetch('/jokes') {
+        method: 'POST'
+        headers: 'Accept' , 'application/json',
+        
+    }
+
+}
 ---
 
 ### `POST
 
 ```js
-fetch('<URL>'{
+fetch('<URL>', {
         method: 'POST', // (optional) for `GET`
         mode: '',       // (optional) no-cors, *cors, same-origin
         cache: '',      // (optional) no-cache, reload, force-cache, only-if-cached
