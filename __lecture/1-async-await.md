@@ -18,11 +18,26 @@ const newPauseFunction = (sec) => {
     });
 }
 
+//benefit is to not this part here. Many callbacks. 
 newPauseFunction(1)
     .then(() => newPauseFunction(2))
     .then(() => newPauseFunction(3))
     .then(() => newPauseFunction(3))
     .then(data => console.log(data));
+
+//If I want to rerite that:
+//When it hits await, the code stops there and awaits a response, the code will not continue. 
+//Code is blocked....until resolve happen in the rpomise.
+const doIt = async () => {
+    const data = await newPauseFunction(1);
+    await newPauseFunction(2);
+    await newPauseFunction(3);
+    await newPauseFunction(3);
+    console.log('no more "awaits"');
+
+}
+
+doIt();
 ```
 
 _let's convert it to async/await_
@@ -44,6 +59,16 @@ transformText(string)
         return str;
     })
     .catch((err) => console.log(err));
+
+
+const transformText = async (string) => {
+    const str = await allCaps(string)
+    nextStr = await trimFirst(str)
+    nextNextStr = await trimLast(nextStr)
+    ...
+
+
+}
 ```
 
 ---
